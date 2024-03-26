@@ -36,4 +36,3 @@ message RouteSummary {
     int32 distance = 3;
     int32 elapsed_time = 4;
 }
-

@@ -6,7 +6,7 @@ import route_guide_pb2 as route__guide__pb2
 
 
 class RouteGuideStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Interface exported by the server."""
 
     def __init__(self, channel):
         """Constructor.
@@ -37,28 +37,48 @@ class RouteGuideStub(object):
 
 
 class RouteGuideServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Interface exported by the server."""
 
     def GetFeature(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """A simple RPC.
+        
+        Obtains the feature at a given position.
+
+        A feature with an empty name is returned if there's no feature at the given
+        position.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListFeatures(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """A server-to-client streaming RPC.
+        
+        Obtains the Features available within the given Rectangle. Results are
+        streamed rather than returned at once (e.g. in a response message with a 
+        repeated field), as the rectangle may cover a large and contain a
+        huge number of features.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RecordRoute(self, request_iterator, context):
-        """Missing associated documentation comment in .proto file."""
+        """A client-to-server streaming RPC.
+        
+        Accepts a stream of Points on a route being traversed, returning a
+        RouteSummary when traversal is completed.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RouteChat(self, request_iterator, context):
-        """Missing associated documentation comment in .proto file."""
+        """A Bidirectional streaming RPC.
+
+        Accepts a stream of RouteNotes sent while a route is being traversed,
+        while receiving other RouteNotes (e.g. from other users).
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -94,7 +114,7 @@ def add_RouteGuideServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class RouteGuide(object):
-    """Missing associated documentation comment in .proto file."""
+    """Interface exported by the server."""
 
     @staticmethod
     def GetFeature(request,
