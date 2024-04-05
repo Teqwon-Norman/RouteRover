@@ -3,8 +3,7 @@ import math
 import time
 
 import grpc
-import route_guide_pb2
-import route_guide_pb2_grpc
+from protos import route_guide_pb2, route_guide_pb2_grpc
 import route_guide_resources
 
 def get_feature(feature_db, point):
