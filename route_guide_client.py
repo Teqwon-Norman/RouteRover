@@ -1,6 +1,19 @@
+from __future__ import print_function
 
-def make_route_note():
-    pass
+import logging
+import random
+
+import grpc
+import route_guide_pb2
+import route_guide_pb2_grpc
+import route_guide_resources
+
+
+def make_route_note(message, latitude, longitude):
+    return route_guide_pb2.RouteNote(
+        message=message,
+        location=route_guide_pb2.Point(latitude=latitude, longitude=longitude)
+    )
 
 def guide_get_one_feature():
     pass
