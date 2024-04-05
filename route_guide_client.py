@@ -4,7 +4,8 @@ import logging
 import random
 
 import grpc
-from protos import route_guide_pb2, route_guide_pb2_grpc
+import route_guide_pb2
+import route_guide_pb2_grpc
 import route_guide_resources
 
 
@@ -69,9 +70,10 @@ def generate_messages():
         make_route_note("Second message", 0, 1),
         make_route_note("Third message", 1, 0),
         make_route_note("Fourth message", 0, 0),
+        make_route_note("Fifth message", 0, 1),
     ]
     for msg in messages:
-        print(f"Sending message {msg.message} at {msg.location}")
+        print(f"Sending {msg.message} at {msg.location}")
         yield msg
 
 def guide_route_chat(stub):
