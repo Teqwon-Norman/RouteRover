@@ -20,4 +20,5 @@ def read_route_guide_database():
                 ),
             )
             feature_list.append(feature)
+    route_guide_db_file.close()
     return feature_list
